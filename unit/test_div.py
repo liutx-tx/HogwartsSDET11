@@ -40,3 +40,5 @@ def test_div_int_param(number1,number2,expection):
 
     x=2
     print(x)
+    aa=2
+    print(aa)
