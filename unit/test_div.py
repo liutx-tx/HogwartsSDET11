@@ -37,3 +37,6 @@ def div(a, b):
 })
 def test_div_int_param(number1,number2,expection):
     assert div(number1,number2) == expection
+
+    x=2
+    print(x)
