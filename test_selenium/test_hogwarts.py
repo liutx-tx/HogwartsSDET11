@@ -46,3 +46,29 @@
 #
 # if __name__ == '__main__':
 #     pytest.main()
+from turtle import pd
+
+
+def caseTest():
+    new_price = {}
+    old_price = {}
+    dif = []
+
+    res1 = pd.read_excel('price.xlsx',sheet_name='价格调整',encoding='utf-8')
+    res2 = pd.read_excel('data2.xlsx', sheet_name='0', encoding='utf-8')
+    for code,price in zip(res1['barcode'],res1['prices']):
+        new_price[code] = str(price)
+    for code,price in zip(res2['barcode'],res2['prices']):
+        old_price[code] = str(price)
+
+    # print(new_price)
+    # print(old_price)
+    for key,val in new_price.items():
+        old_val = old_price.get(key)
+        if val == old_val:
+            pass
+        else:
+            dif.append({'code':key,'new_price':val,'old_price':old_val})
+
+    for i in dif:
+        print(i)

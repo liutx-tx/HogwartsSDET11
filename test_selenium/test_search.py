@@ -23,6 +23,7 @@ class TestSearch:
 
         if browser == "phantomjs":
             self.driver = webdriver.PhantomJS()
+
         elif browser == "firefox":
             self.driver = webdriver.Firefox()
         elif browser == 'headless':
@@ -80,6 +81,7 @@ class TestSearch:
         # self.driver.find_element(By.CSS_SELECTOR,".qjs_add_member button").click()
 
         self.driver.find_element(By.LINK_TEXT, "添加成员").click()
+        # self.driver.find_element(By.CSS_SELECTOR,"a.qui_btn.ww_btn.js_add_member")
         time.sleep(2)
         self.driver.find_element(By.NAME,"username").send_keys("abc")
         self.driver.find_element(By.NAME,"english_name").send_keys("红桃A")
